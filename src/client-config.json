@@ -26,6 +26,16 @@
             "state": "Delhi",
             "country": "India",
             "openHours": "Open 24 hours"
+        },
+        "redemption_road_studios": {
+            "studioName": "Redemption Road Studios",
+            "phone": "+91 99588 13623",
+            "whatsappNumber": "919958813623",
+            "email": "info@redemptionroadstudios.com",
+            "address": "Shop no 2, Harit Heights 2, Basai, Sector 70, Noida, Uttar Pradesh 201316",
+            "instagram": "",
+            "youtube": "",
+            "facebook": ""
         }
     }
 }
