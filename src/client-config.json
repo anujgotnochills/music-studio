@@ -1,0 +1,31 @@
+{
+    "default": "smartclick",
+    "clients": {
+        "smartclick": {
+            "studioName": "SmartClickStudio",
+            "accentColor": "#c9a96e",
+            "bgColor": "#0a0a0f",
+            "phone": "+91 88829 36654",
+            "whatsappNumber": "918882936654",
+            "email": "hello@smartclickstudio.com",
+            "address": "Studio 402, Creative Hub, Andheri West, Mumbai 400058",
+            "instagram": "https://www.instagram.com/smartclickstudio",
+            "youtube": "https://www.youtube.com/",
+            "facebook": "https://www.facebook.com/"
+        },
+        "on_point_records": {
+            "studioName": "On Point Records | Recording Studio",
+            "category": "Podcast Studio / Recording Studio",
+            "rating": 4.8,
+            "reviewsCount": 4,
+            "phone": "+91 88600 42706",
+            "whatsappNumber": "918860042706",
+            "website": "https://onpointrecords.in",
+            "address": "22 E, Block CC, Police Colony, Shalimar Bagh, Delhi, 110088",
+            "city": "Delhi",
+            "state": "Delhi",
+            "country": "India",
+            "openHours": "Open 24 hours"
+        }
+    }
+}

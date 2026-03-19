@@ -1,0 +1,235 @@
+{
+  "brand": {
+    "name": "Echo Sound Studios",
+    "shortName": "EchoSound",
+    "tagline": "Professional Recording Studio",
+    "logo": {
+      "icon": "graphic_eq",
+      "textBefore": "Echo",
+      "textAccent": "Sound"
+    }
+  },
+
+  "hero": {
+    "subtitle": "Professional Recording Studio",
+    "headline": "Where Sound Comes",
+    "headlineAccent": "Alive",
+    "tagline": "World-class recording. Mixing. Mastering.",
+    "ctaPrimary": { "label": "Book a Session", "href": "#contact" },
+    "ctaSecondary": { "label": "Explore Services", "href": "#services" }
+  },
+
+  "nav": {
+    "links": [
+      { "label": "Services", "href": "#services" },
+      { "label": "Studio", "href": "#studio" },
+      { "label": "Gallery", "href": "#gallery" }
+    ],
+    "cta": { "label": "Book a Session", "href": "#contact" }
+  },
+
+  "marquee": [
+    "Recording", "Mixing", "Mastering", "Podcast", "Voice Over",
+    "Live Sessions", "Sound Design", "Production", "Dolby Atmos", "Post-Production"
+  ],
+
+  "services": {
+    "sectionLabel": "Our Expertise",
+    "sectionTitle": "Studio",
+    "sectionTitleAccent": "Services",
+    "sectionDescription": "Professional audio services crafted by experienced engineers for an experience beyond ordinary.",
+    "items": [
+      {
+        "id": 1,
+        "title": "Recording",
+        "price": "₹5,000",
+        "unit": "Per Hour",
+        "icon": "mic",
+        "image": "studio-recording.png",
+        "features": ["Full-Band Recording", "Vocal Booth", "Instrument Isolation"],
+        "description": "Capture your sound in our acoustically treated rooms with world-class microphones and preamps."
+      },
+      {
+        "id": 2,
+        "title": "Mixing & Mastering",
+        "price": "₹15,000",
+        "unit": "Per Track",
+        "icon": "equalizer",
+        "image": "studio-mixing.png",
+        "features": ["Stem Mixing", "Analog Summing", "Loudness Optimization"],
+        "description": "Professional mixing and mastering that brings clarity, punch, and polish to your tracks."
+      },
+      {
+        "id": 3,
+        "title": "Podcast Production",
+        "price": "₹3,000",
+        "unit": "Per Episode",
+        "icon": "podcasts",
+        "image": "studio-podcast.png",
+        "features": ["Multi-Mic Setup", "Editing & Post", "Distribution Support"],
+        "description": "End-to-end podcast production — from recording to editing to publishing on all major platforms."
+      },
+      {
+        "id": 4,
+        "title": "Sound Design",
+        "price": "₹20,000",
+        "unit": "Per Project",
+        "icon": "music_note",
+        "image": "studio-sounddesign.png",
+        "features": ["Film Score", "SFX & Foley", "Spatial Audio"],
+        "description": "Custom sound design for film, games, and media. From ambient textures to full orchestral scores."
+      }
+    ]
+  },
+
+  "about": {
+    "sectionLabel": "Our Philosophy",
+    "title": "Where Silence Meets",
+    "titleAccent": "Sound.",
+    "paragraphs": [
+      "At Echo Sound Studios, we believe great music starts with the perfect environment. Our acoustically engineered rooms and premium analog-digital hybrid setup create the ideal space for artists to bring their vision to life.",
+      "Whether you're recording your debut single or mastering an album, our team of experienced engineers ensures every frequency, every nuance, every beat is captured with crystalline precision."
+    ],
+    "stats": [
+      { "value": "15+", "label": "Years of Excellence" },
+      { "value": "10k+", "label": "Tracks Produced" }
+    ],
+    "image": "studio-about.png"
+  },
+
+  "stats": [
+    { "end": 15, "suffix": "+", "label": "Years Experience" },
+    { "end": 10000, "suffix": "+", "label": "Tracks Produced" },
+    { "end": 200, "suffix": "+", "label": "Artists Recorded" },
+    { "end": 99, "suffix": "%", "label": "Client Satisfaction" }
+  ],
+
+  "equipment": {
+    "sectionLabel": "The Studio",
+    "sectionTitle": "Our Rooms & Gear",
+    "sectionDescription": "Explore our professionally designed spaces, each optimized for different recording scenarios.",
+    "rooms": [
+      {
+        "id": 1,
+        "title": "Main Studio — Room A",
+        "subtitle": "800 sq ft Live Room",
+        "image": "studio-recording.png",
+        "description": "Our flagship recording space features 18-foot ceilings, a Steinway grand piano, and room for a full orchestra. Acoustically tuned for pristine recordings.",
+        "specs": ["Neve 8078 Console", "18ft Ceiling Height", "Full Drum Kit"]
+      },
+      {
+        "id": 2,
+        "title": "Control Room",
+        "subtitle": "Mixing & Mastering Suite",
+        "image": "studio-mixing.png",
+        "description": "The nerve center of Echo Sound Studios. Equipped with a 48-channel SSL console, Pro Tools HDX, and a curated collection of outboard gear.",
+        "specs": ["SSL 4000 G+", "Genelec 8351B Monitors", "Pro Tools HDX"]
+      },
+      {
+        "id": 3,
+        "title": "Vocal Booth — Room B",
+        "subtitle": "Isolated Recording Space",
+        "image": "studio-about.png",
+        "description": "A perfectly isolated, acoustically dead space for capturing clean vocals, voiceovers, and podcasts. Features a Neumann U87 and an Avalon channel strip.",
+        "specs": ["Neumann U87 AI", "Avalon VT-737sp", "Full Isolation"]
+      }
+    ],
+    "highlights": [
+      { "value": "3", "label": "Recording Rooms" },
+      { "value": "48ch", "label": "Console Channels" }
+    ]
+  },
+
+  "artists": {
+    "heading": "Artists Who Trust Us",
+    "backgroundText": "ECHO SOUND STUDIOS ECHO SOUND",
+    "subtitle": "...and 200+ more artists who've recorded with us",
+    "items": [
+      { "name": "Arjun Mehta", "genre": "Hip-Hop / R&B", "initial": "A" },
+      { "name": "Priya Sharma", "genre": "Indie Pop", "initial": "P" },
+      { "name": "Vikram Singh", "genre": "Classical Fusion", "initial": "V" },
+      { "name": "Naya Collective", "genre": "Electronic / Ambient", "initial": "N" }
+    ]
+  },
+
+  "gallery": {
+    "sectionLabel": "Portfolio",
+    "sectionTitle": "Studio Snapshots",
+    "viewAllText": "View Full Gallery",
+    "items": [
+      { "image": "gallery-livesession.png", "alt": "Live band recording session in studio", "label": "Live Session" },
+      { "image": "gallery-controlroom.png", "alt": "Professional control room with mixing console", "label": "Control Room" },
+      { "image": "gallery-vocalbooth.png", "alt": "Vocal booth with condenser microphone", "label": "Vocal Booth" },
+      { "image": "gallery-console.png", "alt": "Close-up of analog mixing console", "label": "Mixing Console" },
+      { "image": "gallery-artistrecording.png", "alt": "Musician recording guitar in studio", "label": "Artist Recording" },
+      { "image": "studio-sounddesign.png", "alt": "Studio nighttime atmosphere with neon lighting", "label": "Studio Night" }
+    ]
+  },
+
+  "testimonials": {
+    "heading": "What Artists Say",
+    "items": [
+      {
+        "initial": "A",
+        "name": "Arjun Mehta",
+        "service": "Full Album Recording",
+        "quote": "Echo Sound Studios is where my album came alive. The engineers understood my vision from day one — the warmth of the analog console mixed with the precision of digital gave my tracks a sound I couldn't get anywhere else."
+      },
+      {
+        "initial": "S",
+        "name": "Sneha Kapoor",
+        "service": "Podcast Production",
+        "quote": "We've been recording our podcast here for over a year now. The setup is always ready, the sound quality is broadcast-grade, and the team makes our editing workflow seamless. Highly recommended."
+      },
+      {
+        "initial": "R",
+        "name": "Rahul Deshmukh",
+        "service": "Mixing & Mastering",
+        "quote": "I sent rough mixes and got back absolute gold. The mastering engineer has an incredible ear — the final tracks had a clarity and punch that elevated our entire project."
+      }
+    ]
+  },
+
+  "contact": {
+    "formHeading": "Book a Session",
+    "formTitle": "Reserve Your Studio Time",
+    "submitLabel": "Request Session",
+    "serviceOptions": [
+      "Recording Session",
+      "Mixing & Mastering",
+      "Podcast Production",
+      "Sound Design",
+      "Other Service"
+    ],
+    "timeSlots": [
+      "Morning (9am - 12pm)",
+      "Afternoon (12pm - 5pm)",
+      "Evening (5pm - 10pm)",
+      "Late Night (10pm - 2am)"
+    ],
+    "info": {
+      "heading": "Visit The Studio",
+      "address": {
+        "area": "Andheri West",
+        "lines": ["Studio 302, Sound House Building", "Off Linking Road, Andheri West", "Mumbai, Maharashtra 400053"]
+      },
+      "phone": "+91 98765 43210",
+      "email": "hello@echosoundstudios.in",
+      "hours": ["Mon - Sat: 9:00 AM - 2:00 AM", "Sun: 10:00 AM - 10:00 PM"]
+    },
+    "socialLabel": "Follow Our Sound",
+    "socials": [
+      { "platform": "youtube", "url": "#" },
+      { "platform": "instagram", "url": "#" },
+      { "platform": "soundcloud", "url": "#" }
+    ]
+  },
+
+  "footer": {
+    "copyright": "© 2026 Echo Sound Studios. All rights reserved.",
+    "links": [
+      { "label": "Privacy Policy", "href": "#" },
+      { "label": "Terms of Service", "href": "#" }
+    ]
+  }
+}
