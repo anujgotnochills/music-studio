@@ -66,6 +66,16 @@
             "instagram": "",
             "youtube": "",
             "facebook": ""
+        },
+        "boss_music_studio": {
+            "studioName": "Boss Music Studio",
+            "phone": "+91 89233 35598",
+            "whatsappNumber": "918923335598",
+            "email": "info@bossmusicstudio.com",
+            "address": "268C, Phase 2, Om Vihar, Nawada, New Delhi, Delhi 110059",
+            "instagram": "",
+            "youtube": "https://youtube.com",
+            "facebook": ""
         }
     }
 }
