@@ -5,10 +5,11 @@ import { useClient, resolveImage } from '../context/ClientContext'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const animationModules = import.meta.glob('../assets/animation/*.jpg', { eager: true })
-const imagePaths = Object.keys(animationModules).sort().map(key => animationModules[key].default)
-const frameCount = imagePaths.length
-const currentFrame = (index) => imagePaths[index - 1]
+const desktopModules = import.meta.glob('../assets/animation/*.jpg', { eager: true })
+const desktopImagePaths = Object.keys(desktopModules).sort().map(key => desktopModules[key].default)
+
+const mobileModules = import.meta.glob('../assets/animation mobile/*.jpg', { eager: true })
+const mobileImagePaths = Object.keys(mobileModules).sort().map(key => mobileModules[key].default)
 
 export default function Hero() {
     const { hero, about } = useClient()
@@ -27,22 +28,10 @@ export default function Hero() {
     useEffect(() => {
         let ctx;
         
-        if (isMobile) {
-            // Mobile: Just animate the text in normally
-            ctx = gsap.context(() => {
-                gsap.from('[data-hero-reveal]', {
-                    y: 50,
-                    opacity: 0,
-                    duration: 1.2,
-                    stagger: 0.15,
-                    ease: 'power4.out',
-                    delay: 0.2,
-                })
-            }, containerRef)
-            return () => ctx.revert()
-        }
+        const currentPaths = isMobile ? mobileImagePaths : desktopImagePaths;
+        const currentFrameCount = currentPaths.length;
+        const getFrame = (index) => currentPaths[index - 1];
 
-        // Desktop: Canvas Sequence logic
         const canvas = canvasRef.current
         if (!canvas) return
         const context = canvas.getContext('2d', { alpha: false }) // Performance opt
@@ -73,9 +62,9 @@ export default function Hero() {
         }
 
         // Preload images
-        for (let i = 1; i <= frameCount; i++) {
+        for (let i = 1; i <= currentFrameCount; i++) {
             const img = new Image()
-            img.src = currentFrame(i)
+            img.src = getFrame(i)
             img.onload = () => {
                 loaded++
                 setImagesLoaded(loaded)
@@ -97,15 +86,15 @@ export default function Hero() {
 
             // Canvas Scrub Animation
             gsap.to(animationObj, {
-                frame: frameCount - 1,
+                frame: currentFrameCount - 1,
                 snap: 'frame',
                 ease: 'none', // linear scrub
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: 'top top',
-                    end: '+=400%', // 4 times height for scroll depth
-                    scrub: 0.5,    // smooth scrubbing
-                    pin: true,     // pin section
+                    end: isMobile ? '+=150%' : '+=400%', // shorter scroll depth on mobile
+                    scrub: 1,    // smooth scrubbing
+                    pin: true,   // pin section
                 },
                 onUpdate: () => render(images[Math.round(animationObj.frame)])
             })
@@ -134,37 +123,34 @@ export default function Hero() {
         }
     }, [isMobile])
 
+    const currentPaths = isMobile ? mobileImagePaths : desktopImagePaths;
+    const currentFrameCount = currentPaths.length;
+
     return (
         <section ref={containerRef} className="relative h-screen bg-black w-full overflow-hidden z-10" id="hero">
-            {isMobile ? (
-                <img src={heroImage} alt="Studio static background" className="absolute inset-0 w-full h-full object-cover" />
-            ) : (
-                <>
-                    {imagesLoaded < frameCount && (
-                        <div className="absolute inset-0 z-[100] flex items-center justify-center bg-neutral-950 text-brand font-display text-sm tracking-widest uppercase">
-                            <span>Loading Experience... {Math.round((imagesLoaded / frameCount) * 100)}%</span>
-                        </div>
-                    )}
-                    <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-                </>
+            {imagesLoaded < currentFrameCount && (
+                <div className="absolute inset-0 z-[100] flex items-center justify-center bg-neutral-950 text-brand font-display text-sm tracking-widest uppercase">
+                    <span>Loading Experience... {Math.round((imagesLoaded / currentFrameCount) * 100)}%</span>
+                </div>
             )}
+            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
             
             {/* Overlay gradient so text is readable */}
             <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/60 via-neutral-950/20 to-neutral-950/80 pointer-events-none" />
             
             {/* Content layer */}
-            <div className="hero-content-layer absolute inset-0 flex flex-col items-center justify-center pointer-events-auto px-4 text-center z-10">
-                <div data-hero-reveal className="h-px w-24 bg-brand mb-6 opacity-50" />
-                <h2 data-hero-reveal className="text-white/70 font-body text-sm md:text-base uppercase tracking-[0.3em] font-bold">
+            <div className="hero-content-layer absolute inset-0 flex flex-col items-center justify-center pb-[10vh] md:pb-0 pointer-events-auto px-4 text-center z-10">
+                <div data-hero-reveal className="h-px w-24 bg-brand mb-4 md:mb-6 opacity-50" />
+                <h2 data-hero-reveal className="text-white/70 font-body text-xs md:text-base uppercase tracking-[0.3em] font-bold">
                     {hero.subtitle}
                 </h2>
-                <h1 data-hero-reveal className="font-display text-5xl md:text-7xl lg:text-8xl font-medium text-white leading-tight tracking-tight mt-6 mb-6">
+                <h1 data-hero-reveal className="font-display text-4xl md:text-7xl lg:text-8xl font-medium text-white leading-tight tracking-tight mt-4 mb-4 md:mt-6 md:mb-6">
                     {hero.headline} <span className="italic text-brand">{hero.headlineAccent}</span>
                 </h1>
-                <p data-hero-reveal className="font-display text-xl md:text-2xl text-white/60 italic max-w-2xl font-medium mb-10">
+                <p data-hero-reveal className="font-display text-lg md:text-2xl text-white/60 italic max-w-xl font-medium mb-6 md:mb-10">
                     {hero.tagline}
                 </p>
-                <div data-hero-reveal className="mt-4 flex flex-col sm:flex-row gap-4">
+                <div data-hero-reveal className="mt-2 md:mt-4 flex flex-col sm:flex-row gap-3 md:gap-4 w-full sm:w-auto items-center">
                     <a
                         className="group px-8 py-4 bg-brand text-black font-bold text-sm uppercase tracking-widest hover:bg-brand-dark transition-all duration-300 min-w-[200px] text-center border border-brand relative overflow-hidden"
                         href={hero.ctaPrimary.href}
