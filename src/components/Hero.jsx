@@ -27,28 +27,9 @@ export default function Hero() {
 
     useEffect(() => {
         let ctx;
-<<<<<<< HEAD
-        
         const currentPaths = isMobile ? mobileImagePaths : desktopImagePaths;
         const currentFrameCount = currentPaths.length;
         const getFrame = (index) => currentPaths[index - 1];
-=======
-
-        if (isMobile) {
-            // Mobile: Just animate the text in normally
-            ctx = gsap.context(() => {
-                gsap.from('[data-hero-reveal]', {
-                    y: 50,
-                    opacity: 0,
-                    duration: 1.2,
-                    stagger: 0.15,
-                    ease: 'power4.out',
-                    delay: 0.2,
-                })
-            }, containerRef)
-            return () => ctx.revert()
-        }
->>>>>>> 90119213918230e90c3b60e10250700f718d4c4d
 
         const canvas = canvasRef.current
         if (!canvas) return
@@ -151,28 +132,13 @@ export default function Hero() {
                     <span>Loading Experience... {Math.round((imagesLoaded / currentFrameCount) * 100)}%</span>
                 </div>
             )}
-<<<<<<< HEAD
             <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-            
-=======
 
->>>>>>> 90119213918230e90c3b60e10250700f718d4c4d
             {/* Overlay gradient so text is readable */}
             <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/60 via-neutral-950/20 to-neutral-950/80 pointer-events-none" />
 
             {/* Content layer */}
-<<<<<<< HEAD
-            <div className="hero-content-layer absolute inset-0 flex flex-col items-center justify-center pb-[10vh] md:pb-0 pointer-events-auto px-4 text-center z-10">
-                <div data-hero-reveal className="h-px w-24 bg-brand mb-4 md:mb-6 opacity-50" />
-                <h2 data-hero-reveal className="text-white/70 font-body text-xs md:text-base uppercase tracking-[0.3em] font-bold">
-                    {hero.subtitle}
-                </h2>
-                <h1 data-hero-reveal className="font-display text-4xl md:text-7xl lg:text-8xl font-medium text-white leading-tight tracking-tight mt-4 mb-4 md:mt-6 md:mb-6">
-                    {hero.headline} <span className="italic text-brand">{hero.headlineAccent}</span>
-                </h1>
-                <p data-hero-reveal className="font-display text-lg md:text-2xl text-white/60 italic max-w-xl font-medium mb-6 md:mb-10">
-=======
-            <div className="hero-content-layer absolute inset-0 flex flex-col items-center justify-center pointer-events-auto px-4 pt-24 sm:pt-0 text-center z-10">
+            <div className="hero-content-layer absolute inset-0 flex flex-col items-center justify-center pointer-events-auto px-4 pt-24 sm:pt-0 pb-[10vh] md:pb-0 text-center z-10">
                 <div data-hero-reveal className="h-px w-24 bg-brand mb-6 opacity-50" />
                 <h2 data-hero-reveal className="text-white/70 font-body text-sm md:text-base uppercase tracking-[0.3em] font-bold">
                     {hero.subtitle}
@@ -181,7 +147,6 @@ export default function Hero() {
                     {hero.headline} <span className="italic text-brand block sm:inline">{hero.headlineAccent}</span>
                 </h1>
                 <p data-hero-reveal className="font-display text-lg sm:text-xl md:text-2xl text-white/60 italic max-w-2xl font-medium mb-10 px-4">
->>>>>>> 90119213918230e90c3b60e10250700f718d4c4d
                     {hero.tagline}
                 </p>
                 <div data-hero-reveal className="mt-2 md:mt-4 flex flex-col sm:flex-row gap-3 md:gap-4 w-full sm:w-auto items-center">
