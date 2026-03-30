@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-import { supabase } from '../supabase/config'
 import configData from '../client-config.json'
 
 // ── Resolve the active client from config ──────────────────────────
@@ -207,7 +206,7 @@ const ClientContext = createContext(staticContext)
 
 export function ClientProvider({ children }) {
     const [contextData, setContextData] = useState(staticContext)
-    const [databaseReady, setDatabaseReady] = useState(false)
+    const [databaseReady, setDatabaseReady] = useState(true)
 
     // Inject accent color + bg color as CSS custom properties on mount
     useEffect(() => {
@@ -224,98 +223,6 @@ export function ClientProvider({ children }) {
 
         document.title = `${contextData.brand.name} | Professional Recording, Mixing & Mastering`
     }, [contextData])
-
-    // ── Supabase data fetching ──────────────────────────────
-    useEffect(() => {
-        if (!supabase) {
-            console.warn('[ClientContext] No Supabase config found — using static fallback data')
-            return
-        }
-
-        async function fetchSupabaseData() {
-            try {
-                // Fetch Testimonials
-                const { data: testimonials } = await supabase.from('testimonials').select('*').order('order', { ascending: true })
-                if (testimonials?.length > 0) {
-                    setContextData(prev => ({
-                        ...prev,
-                        testimonials: {
-                            ...prev.testimonials,
-                            items: testimonials.map(d => ({
-                                id: d.id,
-                                initial: d.initial || d.name?.[0] || '?',
-                                name: d.name,
-                                service: d.service,
-                                quote: d.quote,
-                            })),
-                        },
-                    }))
-                }
-
-                // Fetch Services
-                const { data: services } = await supabase.from('services').select('*').order('order', { ascending: true })
-                if (services?.length > 0) {
-                    setContextData(prev => ({
-                        ...prev,
-                        services: {
-                            ...prev.services,
-                            items: services.map((d, i) => ({
-                                id: d.id,
-                                title: d.title,
-                                price: d.price,
-                                unit: d.unit,
-                                icon: d.icon || 'music_note',
-                                image: d.imageUrl || '',
-                                features: d.features || [],
-                                description: d.description || '',
-                            })),
-                        },
-                    }))
-                }
-
-                // Fetch Gallery
-                const { data: gallery } = await supabase.from('gallery').select('*').order('order', { ascending: true })
-                if (gallery?.length > 0) {
-                    setContextData(prev => ({
-                        ...prev,
-                        gallery: {
-                            ...prev.gallery,
-                            items: gallery.map(d => ({
-                                id: d.id,
-                                image: d.imageUrl || '',
-                                alt: d.alt || d.label || '',
-                                label: d.label || '',
-                            })),
-                        },
-                    }))
-                }
-
-                // Fetch Videos
-                const { data: videos } = await supabase.from('videos').select('*').order('order', { ascending: true })
-                if (videos) {
-                    setContextData(prev => ({
-                        ...prev,
-                        videos: {
-                            ...prev.videos,
-                            items: videos.map(d => ({
-                                id: d.id,
-                                title: d.title || '',
-                                description: d.description || '',
-                                videoUrl: d.videoUrl || '',
-                                thumbnailUrl: d.thumbnailUrl || '',
-                            })),
-                        },
-                    }))
-                }
-                
-                setDatabaseReady(true)
-            } catch (err) {
-                console.error('[Supabase] Failed to fetch data:', err)
-            }
-        }
-
-        fetchSupabaseData()
-    }, [])
 
     return (
         <ClientContext.Provider value={{ ...contextData, databaseReady }}>
