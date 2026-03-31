@@ -155,6 +155,16 @@
             "instagram": "https://instagram.com",
             "youtube": "",
             "facebook": ""
+        },
+        "samirg_studios": {
+            "studioName": "SamirG Studios",
+            "phone": "+91 81309 49833",
+            "whatsappNumber": "918130949833",
+            "email": "info@samirgstudios.com",
+            "address": "Sainik Enclave, H.No. 47, Flat No. 1, near Gandhi Chowk, Part 3, Mohan Garden, Uttam Nagar, New Delhi, Delhi 110059",
+            "instagram": "",
+            "youtube": "",
+            "facebook": ""
         }
     }
 }
