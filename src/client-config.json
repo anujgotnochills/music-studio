@@ -106,6 +106,16 @@
             "instagram": "",
             "youtube": "",
             "facebook": ""
+        },
+        "stage_jam_live_studios": {
+            "studioName": "Stage Jam Live Studios",
+            "phone": "+91 85859 53351",
+            "whatsappNumber": "918585953351",
+            "email": "info@stagejamlivestudios.com",
+            "address": "H4/9, Basement, Elite Apartments, Kali Nagar, Bengali Colony, Mahavir Enclave Part 1, Mahavir Enclave, New Delhi, Delhi 110045",
+            "instagram": "",
+            "youtube": "",
+            "facebook": ""
         }
     }
 }
