@@ -136,6 +136,15 @@
             "instagram": "",
             "youtube": "",
             "facebook": ""
+        },
+        "the_meteor_studios": {
+            "studioName": "The Meteor Studios",
+            "tagline": "Where music meets energy and performance",
+            "introText": "The Meteor Studios is a high-end music and rehearsal space offering recording, jam sessions, and backline rental services. Known for its vibrant environment and professional setup, it caters to musicians, bands, and live performers.",
+            "phone": "+91 95991 35757",
+            "address": "K 109, Krishna Park Extension,<br>Tilak Nagar, New Delhi, Delhi 110018",
+            "email": "info@themeteorstudios.in",
+            "whatsappNumber": "919599135757"
         }
     }
 }
